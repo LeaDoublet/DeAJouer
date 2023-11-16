@@ -2,6 +2,8 @@ public class DeAJouer {
     public int value;
     public int nb_face;
 
+    public int nb_de_cree;
+
     //Constructeur par defaut
     public DeAJouer(){
         value = 1;
@@ -24,5 +26,22 @@ public class DeAJouer {
     }
     public int getFace(){
         return nb_face;
+    }
+
+    public void lanceLeDe(){
+        switch(nb_face) {
+            case 6:
+                int valueForThisRound = (int) (Math.random() * 6 + 1);
+                this.value = valueForThisRound;
+                afficheValeur();
+                break;
+            default:
+                break;
+        }
+    }
+
+    public void afficheValeur(){
+        System.out.println("la valeur du dé est : "+this.value);
+
     }
 }
