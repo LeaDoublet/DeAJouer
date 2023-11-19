@@ -1,18 +1,20 @@
 public class DeAJouer {
-    public int value;
-    public int nb_face;
+    private int value;
+    private int nb_face;
 
-    public int nb_de_cree;
+    private static int nb_de_cree;
 
     //Constructeur par defaut
     public DeAJouer(){
         value = 1;
         nb_face=6;
+        nb_de_cree++;
     }
 
     public DeAJouer(int value, int nb_face){
         this.value=value;
         this.nb_face=nb_face;
+        nb_de_cree++;
     }
 
     public void setValue(int v){
@@ -42,6 +44,8 @@ public class DeAJouer {
 
     public void afficheValeur(){
         System.out.println("la valeur du dé est : "+this.value);
-
+    }
+    public static int getNbDeCree() {
+        return nb_de_cree;
     }
 }
