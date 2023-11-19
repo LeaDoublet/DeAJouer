@@ -30,5 +30,25 @@ public class Joueur {
             tableauAjouer[i].afficheValeur();
         }
     }
+    public int score(){
+        int score = 0;
+        for (int i=0; i<nbDe;i++){
+            score += tableauAjouer[i].getValue();
+        } return score;
+    }
 
+    public int min() {
+        int min = 100;
+        for (int i = 0; i < nbDe; i++) {
+            min = (Math.min(tableauAjouer[i].getValue(), min));
+        }
+        return min;
+    }
+    public int max(){
+        int max = 0;
+        for (int i=0; i<nbDe; i++){
+            max= (Math.max(tableauAjouer[i].getValue(), max));
+        }
+        return max;
+    }
 }

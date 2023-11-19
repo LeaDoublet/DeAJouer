@@ -35,7 +35,7 @@ public class DeAJouer {
             case 6:
                 int valueForThisRound = (int) (Math.random() * 6 + 1);
                 this.value = valueForThisRound;
-                afficheValeur();
+
                 break;
             default:
                 break;
