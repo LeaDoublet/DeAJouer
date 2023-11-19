@@ -7,6 +7,7 @@ public class TestDeJeuDeDes {
                 int nbDes;
                 int nbFaces;
 
+
                 Scanner scanner = new Scanner (System.in);
                 System.out.print( " Bonjour, veuillez entrer le nombre de dés : ");
                 nbDes = scanner.nextInt();
@@ -28,5 +29,12 @@ public class TestDeJeuDeDes {
                         + " --- Min : "+ tableauJoueur[i].min()+ " --- Max : "+ tableauJoueur[i].max());
                 }
 
+                System.out.print("------- Jeu du CRAPS ------");
+
+                for (int i = 0; i < NBJOUEURS; i++) {
+                        System.out.println("\n Jeu du Craps pour  " + tableauJoueur[i].getNom() + " " + tableauJoueur[i].getPrenom());
+                        tableauJoueur[i].playCraps();
+
+                }
         }
 }

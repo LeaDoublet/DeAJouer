@@ -51,4 +51,42 @@ public class Joueur {
         }
         return max;
     }
+
+
+        public void playCraps() {
+            if (this.nbDe != 2 || this.tableauAjouer[0].getFace() != 6 || this.tableauAjouer[1].getFace() != 6) {
+                System.out.println("On peut uniquement jouer au CRAPS avec Deux dés de 6 faces. Choisissez vos dés en conséquence :)");
+                return;
+            }
+            int firstRoll = this.score();
+
+            if (firstRoll == 7 || firstRoll == 11) {
+                System.out.println("C'est gagné !");
+            } else if (firstRoll == 2 || firstRoll == 3 || firstRoll == 12) {
+                System.out.println("C'est perdu ....");
+            } else {
+                System.out.println("Le nombre de point est :  " + firstRoll);
+                int currentRoll;
+
+                do {
+                    this.lance();
+
+                    currentRoll = this.score();
+                    System.out.println("C'est repartie pour un tour : " + currentRoll);
+
+                    if (currentRoll == 7) {
+                        System.out.println("Cest perdu ....");
+                        return;
+                    } else if (currentRoll == firstRoll) {
+                        System.out.println("Bien joué ! ");
+                        return;
+                    }
+
+                    // Si pas 7 ou nombre initial de point
+                    System.out.println("C'est repartie pour un lancé...");
+                } while (true);
+            }
+        }
+
+
 }
